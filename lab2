@@ -71,20 +71,22 @@ void stringCompress(char* src) {
 
 }
 
-const N = 10
-// Сортировка массива вставками
-int Mas_2[N];
-srand(10);
-for (int i = 1; i < N; i++) Mas_2[i] = rand()%144;   // Заполняем Mas_2
-int tmp;
-for (int i = 1; i < N; i++)
-    for (int j = i; j > 0 && x[j - 1] > x[j]; j--) // пока j>0 и элемент j-1 > j, x-массив int
-    {                   // меняем местами элементы j и j-1
-        tmp = x[j - 1];
-        x[j - 1] = x[j];
-        x[j] = tmp;
-    }
 
+// Сортировка массива вставками
+const int NN = 10;
+void sort() {
+    int Mas_2[NN];
+    srand(10);
+    for (int i = 1; i < NN; i++) Mas_2[i] = rand() % 144;   // Заполняем Mas_2
+    int tmp;
+    for (int i = 1; i < NN; i++)
+        for (int j = i; j > 0 && Mas_2[j - 1] > Mas_2[j]; j--) // пока j>0 и элемент j-1 > j, x-массив int
+        {                   // меняем местами элементы j и j-1
+            tmp = Mas_2[j - 1];
+            Mas_2[j - 1] = Mas_2[j];
+            Mas_2[j] = tmp;
+        };
+}
 
 #include <string>
 #include <regex>
