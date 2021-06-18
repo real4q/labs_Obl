@@ -1,0 +1,67 @@
+//lab8
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    int N;
+
+    do {
+        cout << "\n\nВведите 5-значное целое число:\n";
+        cin >> N;
+    } while (N > 9999 && N < 100000);
+
+    int t;
+    cout << "Вывести с единиц? (0 - нет, 1 - да)\n";
+    cin >> t;
+    if (t) {
+        int k = N //Простой вывод, начиная с единиц
+            for (int i = 0; i < 5; i++) {
+                cout << "\n" << k % 10;
+                k /= 10;
+            }
+    }
+    else {
+        int k[5] // вывод, начиная со старшего разряда
+            k[5] = N; // сохраняем значение
+        for (int i = 0; i < 5; i++) {
+            k[i] = N % 5;
+            N /= 10;
+        }
+        for (int i = 4; i > -1; i--) {
+            cout << "\n" << k[i];
+        }
+    }
+
+    // Перевод в верхний регистр
+    char c;
+    do {
+        cout << "\n\nВведите латинскую букву в нижнем регистре: \n";
+        cin >> c;
+    } while (c > 96 && c < 123);
+    c -= 32;
+
+    cout << "Ваша увеличенная буква: " << c;
+          
+}
+
+// среднее арифметическое массива
+double sred_ar_mas()
+{
+    int Mas_8[15];
+    for (int i = 0; i < 15; i++)
+    {
+        Mas_8[i] = -2 + 3 * i; // заполним массив
+    }
+    double sum = 0;
+    int schetchik = 0;
+    for (int i = 0; i < 15; i++)
+    {
+        sum += Mas_8[i];
+        schetchik++;
+    }
+    return sum / schetchik;
+}
